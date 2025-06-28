@@ -1,5 +1,5 @@
 # E-Commerce Data Platform
 
-A cloud-based analytics platform for processing and visualizing e-commerce transactions. Built with MySQL Workbench and AWS services.
+A database-driven platform designed to manage and analyze e-commerce transaction data.  Built with MySQL Workbench and AWS services.
 
 
