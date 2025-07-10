@@ -1,6 +1,7 @@
 CREATE TABLE e_commerce (
     Row_ID INT AUTO_INCREMENT PRIMARY KEY,
     Order_ID VARCHAR(14),
+    Order_Date DATE,
 	Ship_Date DATE,
     Ship_Mode VARCHAR(14),
     Customer_ID VARCHAR(11),
@@ -15,9 +16,11 @@ CREATE TABLE e_commerce (
     Category VARCHAR(15),
     SubCategory VARCHAR(12),
     Product_Name VARCHAR(130),
-    Sales DECIMAL(5,2),
+    Sales DECIMAL(7,2),
     Quantity INT,
     Discount FLOAT(2),
-    Profit DECIMAL(5,2) 
+    Profit DECIMAL(7,2) 
 );
+
+
 
