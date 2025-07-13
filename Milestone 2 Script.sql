@@ -112,7 +112,7 @@ JOIN Categories c ON e.Category = c.Category_Name;
 INSERT INTO Locations (Postal_Code, Region)
 SELECT DISTINCT Postal_Code, Region FROM ecommerce;
 
--- Add foreign keys for new tables - Gabe Tharp
+-- Add foreign keys for new tables - Owen Randolph
 ALTER TABLE products
 ADD FOREIGN KEY (SubCategory_ID) REFERENCES subcategories(SubCategory_ID);
 
