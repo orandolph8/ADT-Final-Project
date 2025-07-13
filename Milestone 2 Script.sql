@@ -27,7 +27,7 @@ SELECT * FROM ecommerce LIMIT 5;
 -- Create 2NF tables for normalization -- Owen Randolph
 CREATE TABLE Customers (
     Customer_ID VARCHAR(11) PRIMARY KEY,
-    Customer_Name VARCHAR(150),
+    Customer_Name VARCHAR(150) NOT NULL UNIQUE,
     Segment VARCHAR(11)
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE Orders (
 
 CREATE TABLE Products (
     Product_ID VARCHAR(15) PRIMARY KEY,
-    Product_Name VARCHAR(130),
+    Product_Name VARCHAR(130) NOT NULL UNIQUE,
     Category VARCHAR(15),
     SubCategory VARCHAR(12)
 );
@@ -52,7 +52,7 @@ CREATE TABLE Products (
 CREATE TABLE Order_Details (
     Order_ID VARCHAR(14),
     Product_ID VARCHAR(15),
-    Quantity INT,
+    Quantity INT NOT NULL,
     Discount DECIMAL(3,2),
     Sales DECIMAL(7,2),
     Profit DECIMAL(7,2),
@@ -83,19 +83,19 @@ SELECT * FROM order_details LIMIT 5;
 -- Create more tables for 3NF normalization - Marcos Fernandez
 CREATE TABLE Categories (
     Category_ID INT AUTO_INCREMENT PRIMARY KEY,
-    Category_Name VARCHAR(50) UNIQUE
+    Category_Name VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE Subcategories (
     SubCategory_ID INT AUTO_INCREMENT PRIMARY KEY,
-    SubCategory_Name VARCHAR(12),
+    SubCategory_Name VARCHAR(12) NOT NULL UNIQUE,
     Category_ID INT,
     FOREIGN KEY (Category_ID) REFERENCES Categories(Category_ID)
 );
 
 CREATE TABLE Locations (
     Postal_Code VARCHAR(10) PRIMARY KEY,
-    Region VARCHAR(7)
+    Region VARCHAR(7) NOT NULL UNIQUE
 );
 
 -- Insert data into new tables - Marcos Fernandez
